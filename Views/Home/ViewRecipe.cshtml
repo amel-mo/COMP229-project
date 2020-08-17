@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Recipe>
+
+@{
+    ViewBag.Title = "Review Recipe";
+}
+<img src="~/images/salmonBaked.jpg" class="position center-block" /><p></p>
+@foreach (Recipe recipe in Model)
+{
+    <h3 class="text-center" style="color:#019966">@recipe.RecipeName</h3>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+
+        </thead>
+
+        <tbody class="text-left">
+            <tr style="color:#666666">
+                <td style="color:#019966">
+                    Recipe Id:
+                    <p style="color:#666666">@recipe.RecipeId</p>
+                </td>
+                <td style="color:#019966">
+                    Recipe Name:
+                    <p style="color:#666666">@recipe.RecipeName</p>
+                </td>
+            </tr>
+            <tr style="color:#666666">
+                <td style="color:#019966">
+                    Recipe Type:
+                    <p style="color:#666666">@recipe.RecipeType</p>
+                </td>
+                <td style="color:#019966">
+                    Added By:
+                    <p style="color:#666666">@recipe.AddedBy</p>
+                </td>
+            </tr>
+            <tr style="color:#666666">
+                <td style="color:#019966">
+                    Prep(min):
+                    <p style="color:#666666">@recipe.PrepTime</p>
+                </td>
+                <td style="color:#019966">
+                    Cook(min):
+                    <p style="color:#666666">@recipe.CookTime</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b style="color:#019966">Ingredients:</b>
+                    <p style="color:#666666">@recipe.Ingredients</p>
+
+                </td>
+                <td>
+                    <b style="color:#019966">Directions:</b>
+                    <p style="color:#666666">@recipe.Directions</p>
+                </td>
+            </tr>
+        </tbody>       
+    </table>
+}
+
+<table align="center">
+    <tbody>
+        <tr>
+            <td>
+                <b style="color:#019966">Pictures:</b>
+                @foreach (var file in Model)
+                {
+                    @await Html.PartialAsync("PictureSummary", file)
+                }
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+    <h4 style="color:#666666" class="text-center"> <a class="nav-link" asp-action="ReviewRecipe" style="color:#019966">View Reviews</a></h4>
+    <h5 style="color:#666666" class="text-center">To go back to Recipes List<a class="nav-link" asp-action="RecipeList" style="color:#019966">Click here</a></h5>
+

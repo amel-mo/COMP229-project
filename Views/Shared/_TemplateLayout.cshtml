@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/IndexStyle.css" />
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon">
+</head>
+<body class="text-center" style="color:#666666">
+    <div id="allPage">
+        <br />
+        <div class="text-center">
+            <a href='@Url.Action("Index")'>
+                <img src='@Url.Content("~/images/recipesLog.jpg")' />
+            </a>
+        </div>
+        <br />
+        <div>
+            @RenderBody()
+        </div><p></p>
+        <h5 style="color:#666666"> To go back to Home Page<a class="nav-link" asp-action="Index" style="color:#019966">Click here</a></h5>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; COMP 229. 2019 Recipes. Amel Mohamed. All rights reserved</p>
+
+    </footer>
+</body>
+</html>

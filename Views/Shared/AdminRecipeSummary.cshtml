@@ -1,0 +1,26 @@
+﻿@model Recipe
+
+<tr>
+    @*<td>@Model.RecipeId</td>*@
+    <td>@Model.RecipeName</td>
+    <td>@Model.RecipeType</td>
+    <td>@Model.AddedBy</td>
+
+    <td class="text-center">
+        <form asp-action="Delete" method="post" asp-controller="Admin">
+            <input type="hidden" name="RecipeId" value="@Model.RecipeId" />
+            <a asp-action="AdminViewRecipe" class="btn btn-sm btn-warning" style="background-color:#666666" asp-route-id="@Model.RecipeId">
+                Details
+            </a>
+            <a asp-action="Edit" class="btn btn-sm btn-warning" style="background-color:#019966" asp-route-id="@Model.RecipeId">
+                Edit
+            </a>
+            <button type="submit" class="btn btn-danger btn-sm" style="background-color:#666666">
+                Delete
+            </button>
+            <a asp-action="Picture" asp-controller="Picture" class="btn btn-sm btn-warning" style="background-color:#019966" asp-route-id="@Model.RecipeId">
+                Upload Image
+            </a>
+        </form>
+    </td>
+</tr>

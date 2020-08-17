@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Recipe>
+@{
+    ViewBag.Title = "Recipe List";
+}
+<div id="allPage">
+    <div class="panel-body">
+        <h1 class="text-center">The List Of Recipes</h1>
+        <table class="table table-sm table-striped table-bordered">
+            <thead style="color:#019966">
+                <tr>
+                    @*<th class="text-center">Recipe Id</th>*@
+                    <th class="text-center">Recipe Name</th>
+                    <th class="text-center">Recipe Type</th>
+                    <th class="text-center">Added By</th>
+                    <th class="text-center">Recipe Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @foreach (var recipe in Model)
+                {
+                    @await Html.PartialAsync("RecipeSummary", recipe)
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

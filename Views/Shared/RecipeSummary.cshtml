@@ -1,0 +1,13 @@
+﻿@model Recipe
+
+<tr>
+    @*<td>@Model.RecipeId</td>*@
+    <td>@Model.RecipeName</td>
+    <td>@Model.RecipeType</td>
+    <td>@Model.AddedBy</td>
+    <td>
+        <a asp-action="ViewRecipe" asp-route-id="@Model.RecipeId">
+            View Details
+        </a>
+    </td>
+</tr>

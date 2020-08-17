@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Recipe>
+
+@{
+    ViewBag.Title = "All Recipes";
+    Layout = "_AdminLayout";
+}
+
+<div id="allPage">
+    <div class="panel-body">
+        <h1 class="text-center">The List Of Recipes</h1>
+        <table class="table table-sm table-striped table-bordered">
+            <thead style="color:#019966">
+                <tr>
+                    @*<th class="text-center">Recipe Id</th>*@
+                    <th class="text-center">Recipe Name</th>
+                    <th class="text-center">Recipe Type</th>
+                    <th class="text-center">Added By</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var recipe in Model)
+                {
+                    @await Html.PartialAsync("AdminRecipeSummary", recipe)
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="text-center">
+    <a asp-action="AddRecipe" class="btn btn-primary" style="background-color:#019966">Add A New Recipe</a><p></p>
+</div>

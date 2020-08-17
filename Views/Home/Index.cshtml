@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Homepage - Recipes";
+}
+ <div class="text-center">            
+     <h3 style="color:#019966"> Healthy Tomorrow's Recipes</h3>
+     <h4>
+         @ViewBag.Welcome
+     </h4>
+ </div>
+ <div class="text-center">
+     <a class="btn btn-primary" asp-action="RecipeList" style="background-color:#019966">Recipes List</a>            
+     @*<a class="btn btn-primary" asp-action="AddRecipe" style="background-color:#019966">Adding New Recipe Form</a>*@
+     <a class="btn btn-primary" asp-action="Contact" style="background-color:#019966">Contact Us</a>
+ </div>
+ <img src="~/images/bestRecipes.jpg" />  

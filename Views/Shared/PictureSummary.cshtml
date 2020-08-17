@@ -1,0 +1,11 @@
+﻿
+@model Recipe
+
+@foreach (UploadImages img in Model.Images)
+{<tr>
+        <td>
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(img.Image)" style="width:400px;margin-bottom:10px"  />
+        </td>
+
+ </tr>
+}

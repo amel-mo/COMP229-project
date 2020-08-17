@@ -1,0 +1,38 @@
+﻿
+body {
+    background-size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    right: auto;
+    left: auto;
+    color: #666666;
+}
+
+#allPage {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}

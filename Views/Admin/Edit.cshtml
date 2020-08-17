@@ -1,0 +1,43 @@
+﻿@model Recipe
+
+@{
+    ViewBag.Title = "Edit Product";
+    Layout = "_AdminLayout";
+}
+
+<form class="p-a-1" asp-action="Edit" method="post" style="color:#666666">
+    <div asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="RecipeId" tabindex="0" />
+    <div class="form-group">
+        <label asp-for="RecipeName">Recipe Name: </label>
+        <input class="form-control" asp-for="RecipeName" tabindex="2" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RecipeType">Recipe Type: </label>
+        <input class="form-control" asp-for="RecipeType" tabindex="4" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AddedBy">Your Name: </label>
+        <input class="form-control" asp-for="AddedBy" tabindex="6" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PrepTime">Prep Time(min): </label>
+        <input class="form-control" asp-for="PrepTime" tabindex="8" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CookTime">Cook Time(min): </label>
+        <input class="form-control" asp-for="CookTime" tabindex="10" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Ingredients">Ingredients: </label>
+        <input class="form-control" asp-for="Ingredients" tabindex="12" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Directions">Directions: </label>
+        <input class="form-control" asp-for="Directions" tabindex="14" />
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit" style="background-color:#019966" tabindex="10">Save</button>
+        <a class="btn btn-primary" asp-action="Index" style="background-color:#019966" tabindex="12">Cancel</a>
+    </div><p></p>
+</form>
